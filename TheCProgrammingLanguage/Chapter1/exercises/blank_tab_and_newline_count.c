@@ -8,8 +8,8 @@ int main()
   while ((c = getchar()) != EOF) {
     if ((c == '\n') || (c == '\t') || (c == '\v') || (c == ' '))
       blanks++;
-    printf("%d\n", blanks);
   }
+  printf("%d\n", blanks);
 
   return 0;
 }
