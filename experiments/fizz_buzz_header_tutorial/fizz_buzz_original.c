@@ -1,7 +1,6 @@
 #include <stdio.h>
-
-void fizz();
-void buzz();
+#include "fizz.h"
+#include "buzz.h"
 
 int main()
 {
@@ -25,12 +24,4 @@ int main()
 
     printf("\n");
   }
-}
-
-void fizz() {
-  puts("fizz");
-}
-
-void buzz() {
-  puts("buzz");
 }
