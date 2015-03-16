@@ -17,21 +17,20 @@ int main()
 
   while ((type = getop(s)) != EOF) {
 
-    printf("s is %s\n", s);
-    if (type == NUMBER) {
-      printf("found a number: %f\n", atof(s));
-      push(atof(s));
-    }
-    else if (type == '+') {
-      printf("found a plus\n");
-      push(pop() + pop());
-    }
-    else if (type == '\n') {
-      printf("calculating result!:\n");
-      printf("\t%.8g\n", pop());
-    }
-    else {
-      return 1;
+    switch(type) {
+      case NUMBER:
+        push(atof(s));
+        break;
+      case '+':
+        push(pop() + pop());
+        break;
+      case '\n':
+        printf("calculating result: %.8g\n", pop());
+        break;
+      default:
+        printf("error: unknown command %c\n", type);
+        return 1;
+        break;
     }
   }
   return 0;
