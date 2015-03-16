@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> /* for atof() */
+#include <math.h> /* for fmod() */
 
 #define MAXOP 100 /* max size of operator */
 #define NUMBER '0' /* signal that number was found */
@@ -36,6 +37,10 @@ int main()
           push(pop() / op2);
         else
           printf("error: cannot divide by 0\n");
+        break;
+      case '%':
+        op2 = pop();
+        push(fmod(op2, pop()));
         break;
       case '\n':
         printf("calculating result: %.8g\n", pop());
