@@ -94,7 +94,7 @@ int getop(char s[]) /* s is an array of characters representing input */
 
   s[1] = '\0'; /* trim whitespace */
 
-  if (!isdigit(c) && c != '.')
+  if (!isdigit(c) && c != '.' && c != '-')
     return c; /* not a number */
 
   i = 0;
@@ -102,7 +102,7 @@ int getop(char s[]) /* s is an array of characters representing input */
       while (isdigit(s[++i] = c = getch()))
         ;
 
-  if (c == '.') /* collect fraction part */
+  if (c == '.' || c == '-') /* collect fraction part */
     while (isdigit(s[++i] = c = getch()))
       ;
 
