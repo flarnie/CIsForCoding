@@ -24,6 +24,19 @@ int main()
       case '+':
         push(pop() + pop());
         break;
+      case '-':
+        push((pop() - pop()));
+        break;
+      case '*':
+        push(pop() * pop());
+        break;
+      case '/':
+        op2 = pop();
+        if (op2 != 0.0)
+          push(pop() / op2);
+        else
+          printf("error: cannot divide by 0\n");
+        break;
       case '\n':
         printf("calculating result: %.8g\n", pop());
         break;
