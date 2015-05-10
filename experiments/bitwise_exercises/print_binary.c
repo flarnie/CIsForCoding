@@ -22,7 +22,11 @@ void printBits(size_t const size, void const * const ptr)
 
 int main(int argv, char* argc[])
 {
-        int i = 23;
+        int j = 141;
+        printf("%d\n", j);
+        printBits(sizeof(j), &j);
+
+        int i = 177;
         float f = 23.45f;
         printf("%d\n", i);
         printBits(sizeof(i), &i);
